@@ -1,0 +1,39 @@
+<Description>
+   ABQcaeG.exe / rank 0 / thread 0  encountered an unhandled exception
+
+</Description>
+
+<Context>
+   ABQcaeG
+</Context>
+
+<Callstack>
+  1)  KERNELBASE.dll              RaiseException                          
+  2)  VCRUNTIME140.dll            CxxThrowException                       
+  3)  ABQSMAAbuGeom.dll           nex_CmdException<atr_String,2>::Propagate
+  4)  ABQSMAPybPyoModule.dll      pyo_ExceptionBinding::ThrowAbaqusException
+  5)  ABQSMAInbVwrPyUtils.dll     pyt_InterpreterRole::RaiseLastException 
+  6)  ABQSMAInbVwrPyUtils.dll     pyt_InterpreterRole::RunCommand         
+  7)  ABQSMAIngFoxAbq.dll         AFXApp::create                          
+  8)  ABQSMAIngVwrGui.dll         gui_Actor::initialize                   
+  9)  ABQSMAIngFoxAbq.dll         AFXApp::create                          
+ 10)  ABQcaeG.exe               unknown                                 
+</Callstack>
+
+<Memory>
+   <Current>              74 MB </Current>
+   <Resident>            127 MB </Resident>
+   <Physical>          15743 MB </Physical>
+   <Limit>                 0 MB </Limit>
+   <Accessible>        15743 MB </Accessible>
+   <Allocator>            DL    </Allocator>
+</Memory>
+
+<Directories>
+  <current> C:\Users\asasc\NextcloudAlterOrdner\Tutorial\Introduction to UMAT and VUMAT Subroutines-Part1\ABAQUS\WORKSHOP-4 DONE VUMAT isotropic hardening </current> <free>    109 GB </free>   <used>    366 GB </used> 
+     <temp> C:\Users\asasc\AppData\Local\Temp </temp>    <free>    109 GB </free>
+</Directories>
+
+<Installation>
+</Installation>
+

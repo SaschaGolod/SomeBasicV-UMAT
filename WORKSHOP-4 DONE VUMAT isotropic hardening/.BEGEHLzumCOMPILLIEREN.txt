@@ -1,0 +1,7 @@
+Das liefert Müll!!!
+
+ifx /c /O2 /fpp ISOTROPIC_HARDENING.for
+
+
+
+ifx /c /fpp /extend-source /DABQ_WIN86_64 /DABQ_FORTRAN /iface:cref /recursive /Qauto /align:array64byte /Qpc64 /Qprec-div /Qfma- /fp:precise /Qimf-arch-consistency:true /Qfp-speculation:safe /Qprotect-parens /reentrancy:threaded /QxSSE3 /QaxAVX /include:%ABA_HOME%\site\include /include:%ABA_HOME%\intel_a\include ISOTROPIC_HARDENING.for

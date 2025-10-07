@@ -1,0 +1,35 @@
+<Description>
+   ABAQUS/ABQcaeK rank 0 received the ABORT signal
+
+</Description>
+
+<Context>
+   CAE
+</Context>
+
+<Callstack>
+  1)  ABQSMABasShared.dll         ExceptCallback1                         
+  2)  ucrtbase.dll                abort                                   
+  3)  ucrtbase.dll                terminate                               
+  4)  VCRUNTIME140_1.dll        unknown                                 
+</Callstack>
+
+<Memory>
+   <Current>             144 MB </Current>
+   <Resident>            191 MB </Resident>
+   <Physical>          15743 MB </Physical>
+   <Limit>                 0 MB </Limit>
+   <Accessible>        15743 MB </Accessible>
+   <Allocator>            DL    </Allocator>
+</Memory>
+
+<Directories>
+  <current> C:\Users\asasc\NextcloudAlterOrdner\Tutorial\Introduction to UMAT and VUMAT Subroutines-Part1\ABAQUS\WORKSHOP-4 DONE VUMAT isotropic hardening </current> <free>    109 GB </free>   <used>    366 GB </used> 
+     <temp> C:\Users\asasc\AppData\Local\Temp </temp>    <free>    109 GB </free>
+</Directories>
+
+<Installation>
+     <Version> 2022 6.22-1 </Version>
+       <Build> 2021_09_15-19.57.30 176069 </Build>
+</Installation>
+

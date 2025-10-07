@@ -1,0 +1,136 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2022 replay file
+# Internal Version: 2021_09_15-19.57.30 176069
+# Run by asasc on Mon Apr 14 20:14:14 2025
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+#: Executing "onCaeGraphicsStartup()" in the home directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=103.321876525879, 
+    height=91.6259307861328)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+#: Executing "onCaeStartup()" in the home directory ...
+openMdb('WORKSHOP2.cae')
+#: The model database "C:\Users\asasc\NextcloudAlterOrdner\Tutorial\Introduction to UMAT and VUMAT Subroutines-Part1\ABAQUS\WORKSHOP-2\WORKSHOP2.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['ABAQUS'].parts['LAMINA']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+a = mdb.models['ABAQUS'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+o3 = session.openOdb(
+    name='C:/Users/asasc/NextcloudAlterOrdner/Tutorial/Introduction to UMAT and VUMAT Subroutines-Part1/ABAQUS/WORKSHOP-2/UMAT.odb')
+#* OdbError: The database is from a previous release of Abaqus. 
+#* Run abaqus -upgrade -job <newFileName> -odb <oldOdbFileName> to upgrade it.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+from  abaqus import session
+session.upgradeOdb(
+    "C:/Users/asasc/NextcloudAlterOrdner/Tutorial/Introduction to UMAT and VUMAT Subroutines-Part1/ABAQUS/WORKSHOP-2/UMAT.odb", 
+    "C:/Users/asasc/AppData/Local/Temp/UMAT1744654464.364.odb", )
+from  abaqus import session
+o7 = session.openOdb(
+    'C:/Users/asasc/AppData/Local/Temp/UMAT1744654464.364.odb')
+#: Model: C:/Users/asasc/AppData/Local/Temp/UMAT1744654464.364.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       4
+#: Number of Node Sets:          3
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='SDV1', outputPosition=INTEGRATION_POINT, )
+session.viewports['Viewport: 1'].view.setValues(nearPlane=132.109, 
+    farPlane=296.622, width=164.82, height=58.6801, cameraPosition=(133.861, 
+    96.4832, 170.427), cameraUpVector=(-0.233397, 0.758541, -0.608393), 
+    cameraTarget=(25.6194, 22.0768, 2.27914))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=136.804, 
+    farPlane=292.037, width=170.677, height=60.7653, cameraPosition=(86.0714, 
+    145.447, 165.6), cameraUpVector=(-0.0790804, 0.557545, -0.826372), 
+    cameraTarget=(25.3972, 22.3045, 2.2567))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=143.351, 
+    farPlane=287.26, width=178.845, height=63.6734, cameraPosition=(27.4954, 
+    103.388, 199.687), cameraUpVector=(0.0289296, 0.744041, -0.667507), 
+    cameraTarget=(25.11, 22.0983, 2.42381))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=139.337, 
+    farPlane=290.773, width=173.837, height=61.8903, cameraPosition=(43.1971, 
+    119.481, 191.424), cameraUpVector=(-0.0476263, 0.687096, -0.725004), 
+    cameraTarget=(25.2512, 22.243, 2.3495))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=148.171, 
+    farPlane=283.32, width=184.858, height=65.8141, cameraPosition=(27.0921, 
+    44.2485, 214.692), cameraUpVector=(-0.00477103, 0.902209, -0.431272), 
+    cameraTarget=(25.125, 21.6533, 2.53189))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=148.298, 
+    farPlane=283.556, width=185.016, height=65.8703, cameraPosition=(19.1986, 
+    25.8892, 215.787), cameraUpVector=(0.0159461, 0.935652, -0.352565), 
+    cameraTarget=(25.038, 21.4511, 2.54395))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=TIME_HISTORY)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.animationOptions.setValues(frameRate=26)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_UNDEF, CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, DEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, CONTOURS_ON_UNDEF, CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, DEFORMED, CONTOURS_ON_UNDEF, CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, CONTOURS_ON_UNDEF, CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, DEFORMED, CONTOURS_ON_UNDEF, CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, CONTOURS_ON_UNDEF, CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, DEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    SYMBOLS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_UNDEF, CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))

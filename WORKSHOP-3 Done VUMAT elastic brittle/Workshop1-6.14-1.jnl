@@ -1,0 +1,821 @@
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['UMAT'].submit(consistencyChecking=OFF)
+mdb.jobs['UMAT']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST EVF IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST SVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *BOUNDARY,TYPE=DISPLACEMENT HAS BEEN USED; CHECK STATUS FILE BETWEEN STEPS FOR WARNINGS ON ANY JUMPS PRESCRIBED ACROSS THE STEPS IN DISPLACEMENT VALUES OF TRANSLATIONAL DOF. FOR ROTATIONAL DOF MAKE SURE THAT THERE ARE NO SUCH JUMPS. ALL JUMPS IN DISPLACEMENTS ACROSS STEPS ARE IGNORED', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STARTED, {'phase': PACKAGER_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 17608, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': PACKAGER_PHASE, 
+    'message': 'There are 5 warning messages in the data (.dat) file.  Please check the data file for possible errors in the input file.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': PACKAGER_PHASE, 
+    'message': 'A material defined in user subroutine VUMAT must be defined as purely elastic (using the initial elastic modulus) at the beginning of the analysis (stepTime=0). This is an informative message. It does not necessarily indicate that user subroutine VUMAT is incorrectly defined.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': PACKAGER_PHASE, 
+    'message': 'Phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STARTED, {'phase': EXPLICIT_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 2104, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0, 
+    'stableTimeIncrement': 4.56197994935792e-07, 'stepTime': 0.0, 
+    'totalEnergy': 0.000145431229611859, 'cpuTime': 0.0, 'jobName': 'UMAT', 
+    'step': 1, 'increment': 0, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.000145431229611859})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.00500010652467608, 
+    'stableTimeIncrement': 6.74578302550799e-07, 
+    'stepTime': 0.00500010652467608, 'totalEnergy': -3.12497687339783, 
+    'cpuTime': 0.400000005960464, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 7416, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.584676921367645})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.010000467300415, 
+    'stableTimeIncrement': 6.74575574066694e-07, 'stepTime': 0.010000467300415, 
+    'totalEnergy': -2.17180609703064, 'cpuTime': 0.800000011920929, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 14829, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.558679461479187})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 2, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0150002352893353, 
+    'stableTimeIncrement': 6.74575233006181e-07, 
+    'stepTime': 0.0150002352893353, 'totalEnergy': -2.35673689842224, 
+    'cpuTime': 1.20000004768372, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 22244, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.0217894576489925})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 3, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0200000032782555, 
+    'stableTimeIncrement': 6.74575915127207e-07, 
+    'stepTime': 0.0200000032782555, 'totalEnergy': -2.15201091766357, 
+    'cpuTime': 1.60000002384186, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 29659, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.0772557184100151})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 4, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0250004455447197, 
+    'stableTimeIncrement': 6.74576426717977e-07, 
+    'stepTime': 0.0250004455447197, 'totalEnergy': -2.08640694618225, 
+    'cpuTime': 2.09999990463257, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 37075, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.0705719962716103})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 5, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0300002135336399, 
+    'stableTimeIncrement': 6.74576369874558e-07, 
+    'stepTime': 0.0300002135336399, 'totalEnergy': -2.08354020118713, 
+    'cpuTime': 2.59999990463257, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 44490, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.035374753177166})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 6, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0350006558001041, 
+    'stableTimeIncrement': 6.74576142500882e-07, 
+    'stepTime': 0.0350006558001041, 'totalEnergy': -2.09105134010315, 
+    'cpuTime': 3.0, 'jobName': 'UMAT', 'step': 1, 'increment': 51906, 
+    'phase': EXPLICIT_PHASE, 'kineticEnergy': 0.00715273711830378})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 7, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0400004237890244, 
+    'stableTimeIncrement': 6.74575971970626e-07, 
+    'stepTime': 0.0400004237890244, 'totalEnergy': -2.08135867118835, 
+    'cpuTime': 3.40000009536743, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 59321, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00546601554378867})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 8, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0450001917779446, 
+    'stableTimeIncrement': 6.74576199344301e-07, 
+    'stepTime': 0.0450001917779446, 'totalEnergy': -2.0686149597168, 
+    'cpuTime': 3.79999995231628, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 66736, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.0116974487900734})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 9, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0500006340444088, 
+    'stableTimeIncrement': 6.74576142500882e-07, 
+    'stepTime': 0.0500006340444088, 'totalEnergy': -2.06998729705811, 
+    'cpuTime': 4.19999980926514, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 74152, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.0063924128189683})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 10, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.055000402033329, 
+    'stableTimeIncrement': 6.74576142500882e-07, 'stepTime': 0.055000402033329, 
+    'totalEnergy': -2.07225680351257, 'cpuTime': 4.5, 'jobName': 'UMAT', 
+    'step': 1, 'increment': 81567, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00179921020753682})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 11, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0600001700222492, 
+    'stableTimeIncrement': 6.74576142500882e-07, 
+    'stepTime': 0.0600001700222492, 'totalEnergy': -2.07051181793213, 
+    'cpuTime': 4.90000009536743, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 88982, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00215146620757878})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 12, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0650001913309097, 
+    'stableTimeIncrement': 6.74575971970626e-07, 
+    'stepTime': 0.0650001913309097, 'totalEnergy': -2.07031488418579, 
+    'cpuTime': 5.30000019073486, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 96377, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.0015142991906032})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 13, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0700004622340202, 
+    'stableTimeIncrement': 6.74575915127207e-07, 
+    'stepTime': 0.0700004622340202, 'totalEnergy': -2.06877183914185, 
+    'cpuTime': 5.69999980926514, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 103752, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00257742032408714})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 14, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0750000551342964, 
+    'stableTimeIncrement': 6.74575971970626e-07, 
+    'stepTime': 0.0750000551342964, 'totalEnergy': -2.06952285766602, 
+    'cpuTime': 6.09999990463257, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 111126, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00151689490303397})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 15, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0800003260374069, 
+    'stableTimeIncrement': 6.74576142500882e-07, 
+    'stepTime': 0.0800003260374069, 'totalEnergy': -2.0689902305603, 
+    'cpuTime': 6.5, 'jobName': 'UMAT', 'step': 1, 'increment': 118501, 
+    'phase': EXPLICIT_PHASE, 'kineticEnergy': 0.00188294413965195})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 16, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0850005969405174, 
+    'stableTimeIncrement': 6.74576654091652e-07, 
+    'stepTime': 0.0850005969405174, 'totalEnergy': -2.06923913955688, 
+    'cpuTime': 6.90000009536743, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 125876, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.001534300041385})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 17, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0900001898407936, 
+    'stableTimeIncrement': 6.74577279369259e-07, 
+    'stepTime': 0.0900001898407936, 'totalEnergy': -2.06914019584656, 
+    'cpuTime': 7.30000019073486, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 133250, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00160864391364157})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 18, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0950004607439041, 
+    'stableTimeIncrement': 6.74577790960029e-07, 
+    'stepTime': 0.0950004607439041, 'totalEnergy': -2.0691967010498, 
+    'cpuTime': 7.69999980926514, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 140625, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00153360003605485})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 19, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.100000001490116, 
+    'stableTimeIncrement': 6.74578302550799e-07, 'stepTime': 0.100000001490116, 
+    'totalEnergy': -2.06920456886292, 'cpuTime': 8.10000038146973, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 148000, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00151435844600201})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 20, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': EXPLICIT_PHASE, 
+    'message': 'Phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(JOB_COMPLETED, {'time': 'Fri Jun 12 18:46:40 2020', 
+    'jobName': 'UMAT'})
+del mdb.jobs['UMAT']
+mdb.Job(activateLoadBalancing=False, atTime=None, contactPrint=OFF, 
+    description='', echoPrint=OFF, explicitPrecision=SINGLE, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='UMAT', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='UMAT', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numDomains=1, parallelizationMethodExplicit=DOMAIN, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.models['UMAT'].parts['Part-1'].deleteMesh()
+mdb.models['UMAT'].parts['Part-1'].seedPart(deviationFactor=0.1, minSizeFactor=
+    0.1, size=2.0)
+mdb.models['UMAT'].parts['Part-1'].setMeshControls(algorithm=MEDIAL_AXIS, 
+    regions=mdb.models['UMAT'].parts['Part-1'].cells.getSequenceFromMask((
+    '[#1 ]', ), ))
+mdb.models['UMAT'].parts['Part-1'].generateMesh()
+mdb.models['UMAT'].rootAssembly.regenerate()
+mdb.jobs['UMAT'].submit(consistencyChecking=OFF)
+mdb.jobs['UMAT']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST EVF IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST SVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *BOUNDARY,TYPE=DISPLACEMENT HAS BEEN USED; CHECK STATUS FILE BETWEEN STEPS FOR WARNINGS ON ANY JUMPS PRESCRIBED ACROSS THE STEPS IN DISPLACEMENT VALUES OF TRANSLATIONAL DOF. FOR ROTATIONAL DOF MAKE SURE THAT THERE ARE NO SUCH JUMPS. ALL JUMPS IN DISPLACEMENTS ACROSS STEPS ARE IGNORED', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STARTED, {'phase': PACKAGER_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 15732, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': PACKAGER_PHASE, 
+    'message': 'There are 5 warning messages in the data (.dat) file.  Please check the data file for possible errors in the input file.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': PACKAGER_PHASE, 
+    'message': 'A material defined in user subroutine VUMAT must be defined as purely elastic (using the initial elastic modulus) at the beginning of the analysis (stepTime=0). This is an informative message. It does not necessarily indicate that user subroutine VUMAT is incorrectly defined.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ERROR, {'phase': PACKAGER_PHASE, 
+    'message': 'NO VUMAT SUBROUTINE WAS SUPPLIED FOR THE USER MATERIAL NAMED: STEEL', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ABORTED, {'phase': PACKAGER_PHASE, 
+    'message': 'Analysis failed due to Errors', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ERROR, {
+    'message': 'Abaqus/Explicit Packager exited with an error - Please see the  status file for possible error messages if the file exists.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Explicit Packager exited with an error - Please see the  status file for possible error messages if the file exists.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT'].setValues(userSubroutine=
+    'C:\\Users\\CAE Assistant\\Desktop\\UMAT\\Workshop3\\ELASTIC.for')
+mdb.jobs['UMAT'].submit(consistencyChecking=OFF)
+mdb.jobs['UMAT']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST EVF IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST SVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *BOUNDARY,TYPE=DISPLACEMENT HAS BEEN USED; CHECK STATUS FILE BETWEEN STEPS FOR WARNINGS ON ANY JUMPS PRESCRIBED ACROSS THE STEPS IN DISPLACEMENT VALUES OF TRANSLATIONAL DOF. FOR ROTATIONAL DOF MAKE SURE THAT THERE ARE NO SUCH JUMPS. ALL JUMPS IN DISPLACEMENTS ACROSS STEPS ARE IGNORED', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STARTED, {'phase': PACKAGER_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 21236, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': PACKAGER_PHASE, 
+    'message': 'There are 5 warning messages in the data (.dat) file.  Please check the data file for possible errors in the input file.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': PACKAGER_PHASE, 
+    'message': 'A material defined in user subroutine VUMAT must be defined as purely elastic (using the initial elastic modulus) at the beginning of the analysis (stepTime=0). This is an informative message. It does not necessarily indicate that user subroutine VUMAT is incorrectly defined.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': PACKAGER_PHASE, 
+    'message': 'Phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STARTED, {'phase': EXPLICIT_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 14368, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0, 
+    'stableTimeIncrement': 1.29033708162751e-07, 'stepTime': 0.0, 
+    'totalEnergy': 3.70550005754922e-05, 'cpuTime': 0.0, 'jobName': 'UMAT', 
+    'step': 1, 'increment': 0, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 3.70550005754922e-05})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.00500016286969185, 
+    'stableTimeIncrement': 1.83325099101239e-07, 
+    'stepTime': 0.00500016286969185, 'totalEnergy': -1.81767213344574, 
+    'cpuTime': 39.2000007629395, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 27278, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.330629795789719})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0100001022219658, 
+    'stableTimeIncrement': 1.83325198577222e-07, 
+    'stepTime': 0.0100001022219658, 'totalEnergy': -1.74036383628845, 
+    'cpuTime': 78.9000015258789, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 54530, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.147520214319229})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 2, 'jobName': 'UMAT'})
+mdb.models['UMAT'].parts['Part-1'].deleteMesh()
+mdb.models['UMAT'].parts['Part-1'].seedPart(deviationFactor=0.1, minSizeFactor=
+    0.1, size=4.0)
+mdb.models['UMAT'].parts['Part-1'].generateMesh()
+mdb.models['UMAT'].rootAssembly.regenerate()
+mdb.jobs['UMAT']._Message(ERROR, {'phase': EXPLICIT_PHASE, 
+    'message': 'Process terminated by external request (SIGTERM or SIGINT received).', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(INTERRUPTED, {'phase': EXPLICIT_PHASE, 
+    'message': 'Analysis terminated by external signal', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ERROR, {
+    'message': 'Abaqus/Explicit Analysis exited with an error - Please see the  status file for possible error messages if the file exists.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Explicit Analysis exited with an error - Please see the  status file for possible error messages if the file exists.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT'].submit(consistencyChecking=OFF)
+mdb.jobs['UMAT']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST EVF IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST SVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *BOUNDARY,TYPE=DISPLACEMENT HAS BEEN USED; CHECK STATUS FILE BETWEEN STEPS FOR WARNINGS ON ANY JUMPS PRESCRIBED ACROSS THE STEPS IN DISPLACEMENT VALUES OF TRANSLATIONAL DOF. FOR ROTATIONAL DOF MAKE SURE THAT THERE ARE NO SUCH JUMPS. ALL JUMPS IN DISPLACEMENTS ACROSS STEPS ARE IGNORED', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STARTED, {'phase': PACKAGER_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 9536, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': PACKAGER_PHASE, 
+    'message': 'There are 5 warning messages in the data (.dat) file.  Please check the data file for possible errors in the input file.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': PACKAGER_PHASE, 
+    'message': 'A material defined in user subroutine VUMAT must be defined as purely elastic (using the initial elastic modulus) at the beginning of the analysis (stepTime=0). This is an informative message. It does not necessarily indicate that user subroutine VUMAT is incorrectly defined.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': PACKAGER_PHASE, 
+    'message': 'Phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STARTED, {'phase': EXPLICIT_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 21236, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0, 
+    'stableTimeIncrement': 2.17104158650727e-07, 'stepTime': 0.0, 
+    'totalEnergy': 7.17316725058481e-05, 'cpuTime': 0.0, 'jobName': 'UMAT', 
+    'step': 1, 'increment': 0, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 7.17316725058481e-05})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.00500022480264306, 
+    'stableTimeIncrement': 3.32281473447438e-07, 
+    'stepTime': 0.00500022480264306, 'totalEnergy': -1.82975816726685, 
+    'cpuTime': 3.70000004768372, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 15051, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.755249083042145})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0100000910460949, 
+    'stableTimeIncrement': 3.32281643977694e-07, 
+    'stepTime': 0.0100000910460949, 'totalEnergy': -1.83809161186218, 
+    'cpuTime': 7.30000019073486, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 30089, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.194878458976746})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 2, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0150002902373672, 
+    'stableTimeIncrement': 3.32281928194789e-07, 
+    'stepTime': 0.0150002902373672, 'totalEnergy': -1.73000800609589, 
+    'cpuTime': 11.0, 'jobName': 'UMAT', 'step': 1, 'increment': 45128, 
+    'phase': EXPLICIT_PHASE, 'kineticEnergy': 0.102148719131947})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 3, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0200001690536737, 
+    'stableTimeIncrement': 3.32281928194789e-07, 
+    'stepTime': 0.0200001690536737, 'totalEnergy': -1.70896828174591, 
+    'cpuTime': 14.6999998092651, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 60203, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.029003668576479})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 4, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.025000287219882, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.025000287219882, 
+    'totalEnergy': -1.68736684322357, 'cpuTime': 18.3999996185303, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 75284, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.0185432527214289})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 5, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0300000738352537, 
+    'stableTimeIncrement': 3.3228184292966e-07, 'stepTime': 0.0300000738352537, 
+    'totalEnergy': -1.67070770263672, 'cpuTime': 22.0, 'jobName': 'UMAT', 
+    'step': 1, 'increment': 90364, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.0147625021636486})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 6, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0350001938641071, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0350001938641071, 
+    'totalEnergy': -1.66517281532288, 'cpuTime': 25.7000007629395, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 105445, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.0101298661902547})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 7, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0400003120303154, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0400003120303154, 
+    'totalEnergy': -1.66306519508362, 'cpuTime': 29.3999996185303, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 120526, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.0067795286886394})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 8, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0450000986456871, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0450000986456871, 
+    'totalEnergy': -1.66080510616302, 'cpuTime': 33.0, 'jobName': 'UMAT', 
+    'step': 1, 'increment': 135606, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00501892901957035})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 9, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0500002168118954, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0500002168118954, 
+    'totalEnergy': -1.66006660461426, 'cpuTime': 36.7000007629395, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 150687, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00413250643759966})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 10, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0550000034272671, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0550000034272671, 
+    'totalEnergy': -1.66035187244415, 'cpuTime': 40.5, 'jobName': 'UMAT', 
+    'step': 1, 'increment': 165767, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00225104601122439})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 11, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0600001215934753, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0600001215934753, 
+    'totalEnergy': -1.6601597070694, 'cpuTime': 44.0999984741211, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 180848, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00204811943694949})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 12, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0650001689791679, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0650001689791679, 
+    'totalEnergy': -1.65924823284149, 'cpuTime': 47.7999992370605, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 195845, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00248941546306014})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 13, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0700001418590546, 
+    'stableTimeIncrement': 3.32281928194789e-07, 
+    'stepTime': 0.0700001418590546, 'totalEnergy': -1.65944302082062, 
+    'cpuTime': 51.4000015258789, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 210758, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00217466452158988})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 14, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0750001147389412, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0750001147389412, 
+    'totalEnergy': -1.65997040271759, 'cpuTime': 55.0, 'jobName': 'UMAT', 
+    'step': 1, 'increment': 225671, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00143563083838671})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 15, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0800000876188278, 
+    'stableTimeIncrement': 3.32281928194789e-07, 
+    'stepTime': 0.0800000876188278, 'totalEnergy': -1.65964019298553, 
+    'cpuTime': 58.7000007629395, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 240584, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00168714858591557})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 16, 'jobName': 'UMAT'})
+mdb.models['UMAT'].parts['Part-1'].deleteMesh(regions=
+    mdb.models['UMAT'].parts['Part-1'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ))
+mdb.models['UMAT'].parts['Part-1'].seedEdgeByNumber(constraint=FINER, edges=
+    mdb.models['UMAT'].parts['Part-1'].edges.getSequenceFromMask(('[#1000 ]', 
+    ), ), number=18)
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0850000604987144, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0850000604987144, 
+    'totalEnergy': -1.65953946113586, 'cpuTime': 62.2999992370605, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 255497, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00171935884281993})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 17, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0900000333786011, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0900000333786011, 
+    'totalEnergy': -1.65976226329803, 'cpuTime': 66.0, 'jobName': 'UMAT', 
+    'step': 1, 'increment': 270410, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00146632723044604})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 18, 'jobName': 'UMAT'})
+mdb.models['UMAT'].parts['Part-1'].generateMesh()
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0950000062584877, 
+    'stableTimeIncrement': 3.32281928194789e-07, 
+    'stepTime': 0.0950000062584877, 'totalEnergy': -1.65972864627838, 
+    'cpuTime': 69.5999984741211, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 285323, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00148206495214254})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 19, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.100000001490116, 
+    'stableTimeIncrement': 3.32281928194789e-07, 'stepTime': 0.100000001490116, 
+    'totalEnergy': -1.6596348285675, 'cpuTime': 73.1999969482422, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 300237, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00155049900058657})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 20, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': EXPLICIT_PHASE, 
+    'message': 'Phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(JOB_COMPLETED, {'time': 'Fri Jun 12 18:53:40 2020', 
+    'jobName': 'UMAT'})
+mdb.models['UMAT'].parts['Part-1'].generateMesh()
+mdb.models['UMAT'].rootAssembly.regenerate()
+del mdb.jobs['UMAT']
+mdb.models['UMAT'].parts['Part-1'].deleteMesh()
+mdb.models['UMAT'].parts['Part-1'].seedPart(deviationFactor=0.1, minSizeFactor=
+    0.1, size=7.0)
+mdb.models['UMAT'].parts['Part-1'].setMeshControls(algorithm=ADVANCING_FRONT, 
+    regions=mdb.models['UMAT'].parts['Part-1'].cells.getSequenceFromMask((
+    '[#1 ]', ), ))
+mdb.models['UMAT'].parts['Part-1'].deleteSeeds(regions=
+    mdb.models['UMAT'].parts['Part-1'].edges.getSequenceFromMask(('[#1000 ]', 
+    ), ))
+mdb.models['UMAT'].rootAssembly.regenerate()
+mdb.models['UMAT'].parts['Part-1'].seedPart(deviationFactor=0.1, minSizeFactor=
+    0.1, size=4.0)
+mdb.models['UMAT'].parts['Part-1'].setMeshControls(algorithm=MEDIAL_AXIS, 
+    regions=mdb.models['UMAT'].parts['Part-1'].cells.getSequenceFromMask((
+    '[#1 ]', ), ))
+mdb.models['UMAT'].parts['Part-1'].generateMesh()
+mdb.models['UMAT'].rootAssembly.regenerate()
+mdb.Job(activateLoadBalancing=False, atTime=None, contactPrint=OFF, 
+    description='', echoPrint=OFF, explicitPrecision=SINGLE, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='UMAT', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='UMAT', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numDomains=1, parallelizationMethodExplicit=DOMAIN, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine=
+    'C:\\Users\\CAE Assistant\\Desktop\\UMAT\\Workshop3\\ELASTIC-BRITTLE.for', 
+    waitHours=0, waitMinutes=0)
+mdb.jobs['UMAT'].submit(consistencyChecking=OFF)
+mdb.jobs['UMAT']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST EVF IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST SVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *BOUNDARY,TYPE=DISPLACEMENT HAS BEEN USED; CHECK STATUS FILE BETWEEN STEPS FOR WARNINGS ON ANY JUMPS PRESCRIBED ACROSS THE STEPS IN DISPLACEMENT VALUES OF TRANSLATIONAL DOF. FOR ROTATIONAL DOF MAKE SURE THAT THERE ARE NO SUCH JUMPS. ALL JUMPS IN DISPLACEMENTS ACROSS STEPS ARE IGNORED', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STARTED, {'phase': PACKAGER_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 10908, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': PACKAGER_PHASE, 
+    'message': 'There are 5 warning messages in the data (.dat) file.  Please check the data file for possible errors in the input file.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': PACKAGER_PHASE, 
+    'message': 'A material defined in user subroutine VUMAT must be defined as purely elastic (using the initial elastic modulus) at the beginning of the analysis (stepTime=0). This is an informative message. It does not necessarily indicate that user subroutine VUMAT is incorrectly defined.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': PACKAGER_PHASE, 
+    'message': 'Phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STARTED, {'phase': EXPLICIT_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 14804, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0, 
+    'stableTimeIncrement': 2.17104158650727e-07, 'stepTime': 0.0, 
+    'totalEnergy': 7.17316725058481e-05, 'cpuTime': 0.0, 'jobName': 'UMAT', 
+    'step': 1, 'increment': 0, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 7.17316725058481e-05})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.00500022480264306, 
+    'stableTimeIncrement': 3.32281473447438e-07, 
+    'stepTime': 0.00500022480264306, 'totalEnergy': -1.82975816726685, 
+    'cpuTime': 3.70000004768372, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 15051, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.755249083042145})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0100000910460949, 
+    'stableTimeIncrement': 3.32281643977694e-07, 
+    'stepTime': 0.0100000910460949, 'totalEnergy': -1.83809161186218, 
+    'cpuTime': 7.40000009536743, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 30089, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.194878458976746})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 2, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0150002902373672, 
+    'stableTimeIncrement': 3.32281928194789e-07, 
+    'stepTime': 0.0150002902373672, 'totalEnergy': -1.73000800609589, 
+    'cpuTime': 11.1000003814697, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 45128, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.102148719131947})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 3, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0200001690536737, 
+    'stableTimeIncrement': 3.32281928194789e-07, 
+    'stepTime': 0.0200001690536737, 'totalEnergy': -1.70896828174591, 
+    'cpuTime': 14.8000001907349, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 60203, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.029003668576479})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 4, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.025000287219882, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.025000287219882, 
+    'totalEnergy': -1.68736684322357, 'cpuTime': 18.5, 'jobName': 'UMAT', 
+    'step': 1, 'increment': 75284, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.0185432527214289})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 5, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0300000738352537, 
+    'stableTimeIncrement': 3.3228184292966e-07, 'stepTime': 0.0300000738352537, 
+    'totalEnergy': -1.67070770263672, 'cpuTime': 22.2000007629395, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 90364, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.0147625021636486})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 6, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0350001938641071, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0350001938641071, 
+    'totalEnergy': -1.66517281532288, 'cpuTime': 25.7999992370605, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 105445, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.0101298661902547})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 7, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0400003120303154, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0400003120303154, 
+    'totalEnergy': -1.66306519508362, 'cpuTime': 29.5, 'jobName': 'UMAT', 
+    'step': 1, 'increment': 120526, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.0067795286886394})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 8, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0450000986456871, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0450000986456871, 
+    'totalEnergy': -1.66080510616302, 'cpuTime': 33.2000007629395, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 135606, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00501892901957035})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 9, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0500002168118954, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0500002168118954, 
+    'totalEnergy': -1.66006660461426, 'cpuTime': 36.9000015258789, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 150687, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00413250643759966})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 10, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0550000034272671, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0550000034272671, 
+    'totalEnergy': -1.66035187244415, 'cpuTime': 40.5, 'jobName': 'UMAT', 
+    'step': 1, 'increment': 165767, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00225104601122439})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 11, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0600001215934753, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0600001215934753, 
+    'totalEnergy': -1.6601597070694, 'cpuTime': 44.2000007629395, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 180848, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00204811943694949})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 12, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0650001689791679, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0650001689791679, 
+    'totalEnergy': -1.65924823284149, 'cpuTime': 47.9000015258789, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 195845, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00248941546306014})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 13, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0700001418590546, 
+    'stableTimeIncrement': 3.32281928194789e-07, 
+    'stepTime': 0.0700001418590546, 'totalEnergy': -1.65944302082062, 
+    'cpuTime': 51.5, 'jobName': 'UMAT', 'step': 1, 'increment': 210758, 
+    'phase': EXPLICIT_PHASE, 'kineticEnergy': 0.00217466452158988})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 14, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0750001147389412, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0750001147389412, 
+    'totalEnergy': -1.65997040271759, 'cpuTime': 55.2000007629395, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 225671, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00143563083838671})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 15, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0800000876188278, 
+    'stableTimeIncrement': 3.32281928194789e-07, 
+    'stepTime': 0.0800000876188278, 'totalEnergy': -1.65964019298553, 
+    'cpuTime': 58.7999992370605, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 240584, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00168714858591557})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 16, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0850000604987144, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0850000604987144, 
+    'totalEnergy': -1.65953946113586, 'cpuTime': 62.4000015258789, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 255497, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00171935884281993})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 17, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0900000333786011, 
+    'stableTimeIncrement': 3.3228187135137e-07, 'stepTime': 0.0900000333786011, 
+    'totalEnergy': -1.65976226329803, 'cpuTime': 66.0, 'jobName': 'UMAT', 
+    'step': 1, 'increment': 270410, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00146632723044604})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 18, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0950000062584877, 
+    'stableTimeIncrement': 3.32281928194789e-07, 
+    'stepTime': 0.0950000062584877, 'totalEnergy': -1.65972864627838, 
+    'cpuTime': 69.6999969482422, 'jobName': 'UMAT', 'step': 1, 
+    'increment': 285323, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00148206495214254})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 19, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.100000001490116, 
+    'stableTimeIncrement': 3.32281928194789e-07, 'stepTime': 0.100000001490116, 
+    'totalEnergy': -1.6596348285675, 'cpuTime': 73.3000030517578, 
+    'jobName': 'UMAT', 'step': 1, 'increment': 300237, 'phase': EXPLICIT_PHASE, 
+    'kineticEnergy': 0.00155049900058657})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': EXPLICIT_PHASE, 'step': 0, 
+    'frame': 20, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': EXPLICIT_PHASE, 
+    'message': 'Phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(JOB_COMPLETED, {'time': 'Fri Jun 12 19:49:17 2020', 
+    'jobName': 'UMAT'})
+mdb.Model(name='ABAQUS', objectToCopy=mdb.models['UMAT'])
+del mdb.models['ABAQUS'].materials['STEEL'].depvar
+del mdb.models['ABAQUS'].materials['STEEL'].userMaterial
+mdb.models['ABAQUS'].materials['STEEL'].Elastic(table=((210000.0, 0.3), ))
+mdb.models['ABAQUS'].materials['STEEL'].elastic.FailStress(table=((0.0, 0.0, 
+    0.0, 0.0, 0.0, 0.0, 45.0), ))
+mdb.Job(activateLoadBalancing=False, atTime=None, contactPrint=OFF, 
+    description='', echoPrint=OFF, explicitPrecision=SINGLE, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='ABAQUS', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='ABAQUS', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numDomains=1, parallelizationMethodExplicit=DOMAIN, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+mdb.models['ABAQUS'].fieldOutputRequests['F-Output-1'].setValues(variables=(
+    'S', 'SVAVG', 'PE', 'PEVAVG', 'PEEQ', 'PEEQVAVG', 'LE', 'U', 'V', 'A', 
+    'RF', 'CSTRESS', 'EVF', 'STATUS'))
+mdb.jobs['ABAQUS'].submit(consistencyChecking=OFF)
+mdb.jobs['ABAQUS']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 0, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'TENSILE FAILURE VALUE MUST BE NONZERO', 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'TENSILE FAILURE VALUES MUST BE POSITIVE. ABSOLUTE VALUE TAKEN.', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'COMPRESSIVE FAILURE VALUE MUST BE NONZERO', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'COMPRESSIVE FAILURE VALUES MUST BE NEGATIVE. NEGATIVE OF INPUT TAKEN.', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'SHEAR FAILURE VALUE MUST BE NONZERO', 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE *FAIL STRESS OPTION IS ONLY VALID FOR PLANE STRESS ELEMENTS. THIS OPTION WILL BE IGNORED WHEN USED WITH OTHER ELEMENTS', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'Anisotropic material properties without a local orientation system have been defined for 624 elements. Anisotropic material properties must be defined in a local orientation system. The elements are identified in element set ErrElemAnisotropicMaterial.', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST EVF IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST SVAVG IS NOT AVAILABLE FOR ELEMENT TYPE C3D8R', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *BOUNDARY,TYPE=DISPLACEMENT HAS BEEN USED; CHECK STATUS FILE BETWEEN STEPS FOR WARNINGS ON ANY JUMPS PRESCRIBED ACROSS THE STEPS IN DISPLACEMENT VALUES OF TRANSLATIONAL DOF. FOR ROTATIONAL DOF MAKE SURE THAT THERE ARE NO SUCH JUMPS. ALL JUMPS IN DISPLACEMENTS ACROSS STEPS ARE IGNORED', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\CAE Assistant\\Desktop\\UMAT\\Workshop3\\ABAQUS.odb', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error.', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error.', 
+    'jobName': 'ABAQUS'})
+del mdb.jobs['ABAQUS']
+del mdb.models['ABAQUS']
+# Save by CAE Assistant on 2020_06_12-19.54.53; build 6.14-1 2014_06_05-02.41.02 134264
+# Save by CAE Assistant on 2020_06_12-19.55.26; build 6.14-1 2014_06_05-02.41.02 134264
+# Save by CAE Assistant on 2020_06_12-19.55.31; build 6.14-1 2014_06_05-02.41.02 134264

@@ -1,0 +1,147 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2022 replay file
+# Internal Version: 2021_09_15-19.57.30 176069
+# Run by asasc on Fri Sep  5 14:30:09 2025
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+#: Executing "onCaeGraphicsStartup()" in the home directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=97.0453109741211, 
+    height=116.294448852539)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+#: Executing "onCaeStartup()" in the home directory ...
+openMdb('Workshop1.cae')
+#: The model database "C:\Users\asasc\NextcloudAlterOrdner\Tutorial\Introduction to UMAT and VUMAT Subroutines-Part1\ABAQUS\WORKSHOP-3 Done VUMAT elastic brittle\Workshop1.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['UMAT'].parts['Part-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+a = mdb.models['UMAT'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+o3 = session.openOdb(
+    name='C:/Users/asasc/NextcloudAlterOrdner/Tutorial/Introduction to UMAT and VUMAT Subroutines-Part1/ABAQUS/WORKSHOP-3 Done VUMAT elastic brittle/UMAT.odb')
+#* OdbError: The database is from a previous release of Abaqus. 
+#* Run abaqus -upgrade -job <newFileName> -odb <oldOdbFileName> to upgrade it.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+from  abaqus import session
+session.upgradeOdb(
+    "C:/Users/asasc/NextcloudAlterOrdner/Tutorial/Introduction to UMAT and VUMAT Subroutines-Part1/ABAQUS/WORKSHOP-3 Done VUMAT elastic brittle/UMAT.odb", 
+    "C:/Users/asasc/AppData/Local/Temp/UMAT1757075434.812.odb", )
+from  abaqus import session
+o7 = session.openOdb(
+    'C:/Users/asasc/AppData/Local/Temp/UMAT1757075434.812.odb')
+#: Model: C:/Users/asasc/AppData/Local/Temp/UMAT1757075434.812.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       3
+#: Number of Node Sets:          3
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=146.013, 
+    farPlane=244.042, width=121.553, height=54.5114, cameraPosition=(135.878, 
+    75.9229, 165.559), cameraUpVector=(-0.279878, 0.80213, -0.527499), 
+    cameraTarget=(43.2368, 18.2331, 3.55037))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=159.342, 
+    farPlane=228.69, width=132.65, height=59.4877, cameraPosition=(74.5785, 
+    60.4689, 191.656), cameraUpVector=(-0.176439, 0.844192, -0.506171), 
+    cameraTarget=(43.3347, 18.2578, 3.5087))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=163.487, 
+    farPlane=224.866, width=136.101, height=61.0353, cameraPosition=(49.8863, 
+    -16.5574, 195.492), cameraUpVector=(-0.0463025, 0.986676, -0.155971), 
+    cameraTarget=(43.5031, 18.7831, 3.48254))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=148.901, 
+    farPlane=239.372, width=123.958, height=55.5899, cameraPosition=(6.05005, 
+    -100.257, 153.55), cameraUpVector=(0.0571763, 0.941806, 0.331258), 
+    cameraTarget=(43.7655, 19.2842, 3.73364))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=159.046, 
+    farPlane=230.38, width=132.403, height=59.3772, cameraPosition=(87.9146, 
+    -2.35788, 192.492), cameraUpVector=(-0.00801286, 0.9721, -0.234428), 
+    cameraTarget=(43.2582, 18.6776, 3.49234))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=154.882, 
+    farPlane=234.019, width=128.936, height=57.8225, cameraPosition=(94.7934, 
+    51.6743, 188.974), cameraUpVector=(-0.167033, 0.871775, -0.460553), 
+    cameraTarget=(43.2361, 18.5037, 3.50366))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=149.961, 
+    farPlane=239.44, width=124.839, height=55.9852, cameraPosition=(115.028, 
+    69.2699, 177.924), cameraUpVector=(-0.211782, 0.823531, -0.526256), 
+    cameraTarget=(43.1436, 18.4232, 3.5542))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=7 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=8 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=9 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=10 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=11 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=12 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=13 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=14 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=15 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=16 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=17 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=18 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=19 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=20 )
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=TIME_HISTORY)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=NONE)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+odb = session.odbs['C:/Users/asasc/AppData/Local/Temp/UMAT1757075434.812.odb']
+xyList = xyPlot.xyDataListFromField(odb=odb, outputPosition=INTEGRATION_POINT, 
+    variable=(('S', INTEGRATION_POINT, ((COMPONENT, 'S11'), (COMPONENT, 'S22'), 
+    )), ), elementPick=(('PART-1-1', 624, ('[#ffffffff:19 #ffff ]', )), ), )
+xyp = session.XYPlot('XYPlot-1')
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+curveList = session.curveSet(xyData=xyList)
+chart.setValues(curvesToPlot=curveList)
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+#: Warning: Requested operation will result in the creation of a very large number of xyDataObjects. Performance can be affected. Please reduce the number of specified entities using Display Group operations before re-performing this operation.
+odb = session.odbs['C:/Users/asasc/AppData/Local/Temp/UMAT1757075434.812.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=odb)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=TIME_HISTORY)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].animationController.incrementFrame()

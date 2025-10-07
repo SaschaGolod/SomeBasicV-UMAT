@@ -1,0 +1,422 @@
+# Save by asasc on 2025_01_20-17.40.01; build 2022 2021_09_15-19.57.30 176069
+from abaqus import *
+upgradeMdb(
+    'C:/Users/asasc/Nextcloud2/Tutorial/Introduction to UMAT and VUMAT Subroutines-Part1/ABAQUS/WORKSHOP-2/WORKSHOP2-6.14-1.cae'
+    , 
+    'C:/Users/asasc/Nextcloud2/Tutorial/Introduction to UMAT and VUMAT Subroutines-Part1/ABAQUS/WORKSHOP-2/WORKSHOP2.cae')
+# Save by asasc on 2025_01_20-17.40.01; build 2022 2021_09_15-19.57.30 176069
+# Save by asasc on 2025_01_20-17.40.32; build 2022 2021_09_15-19.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.saveAs(pathName='C:/Users/asasc/Nextcloud2/Tutorial/Introduction to UMAT and VUMAT Subroutines-Part1/ABAQUS/WORKSHOP-2/WORKSHOP2.cae')
+# Save by asasc on 2025_01_20-17.40.38; build 2022 2021_09_15-19.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.jobs['UMAT']
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='UMAT', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='UMAT', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, resultsFormat=
+    ODB, scratch='', type=ANALYSIS, userSubroutine=
+    'PLANESTRESS-ORTHOTROPIC.for', waitHours=0, waitMinutes=0)
+mdb.jobs['UMAT'].submit(consistencyChecking=OFF)
+mdb.jobs['UMAT']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Bling', 'handle': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\asasc\\NextcloudAlterOrdner\\Tutorial\\Introduction to UMAT and VUMAT Subroutines-Part1\\ABAQUS\\WORKSHOP-2\\UMAT.odb', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Bling', 'handle': 12592, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'UMAT', 'memory': 33.0})
+mdb.jobs['UMAT']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 15743.0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(MINIMUM_MEMORY, {'minimum_memory': 20.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(JOB_COMPLETED, {'time': 'Mon Apr 14 21:14:51 2025', 
+    'jobName': 'UMAT'})
+mdb.jobs['ABAQUS'].submit(consistencyChecking=OFF)
+mdb.jobs['ABAQUS']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Bling', 'handle': 0, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'COMPRESSIVE FAILURE VALUES MUST BE NEGATIVE. NEGATIVE OF INPUT TAKEN.', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'NO BIAXIAL STRESS LIMIT GIVEN.  DEFAULT F12 USED.', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT VARIABLE SDV HAS NO COMPONENTS IN THIS ANALYSIS FOR ELEMENT TYPE S4', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\asasc\\NextcloudAlterOrdner\\Tutorial\\Introduction to UMAT and VUMAT Subroutines-Part1\\ABAQUS\\WORKSHOP-2\\ABAQUS.odb', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Bling', 'handle': 7152, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'ABAQUS', 'memory': 33.0})
+mdb.jobs['ABAQUS']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 15743.0, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(MINIMUM_MEMORY, {'minimum_memory': 20.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'ABAQUS', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['ABAQUS']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(JOB_COMPLETED, {'time': 'Mon Apr 14 21:15:05 2025', 
+    'jobName': 'ABAQUS'})
+mdb.models['UMAT'].rootAssembly.unlock()
+mdb.models['UMAT'].Part(name='LAMINA-failed', objectToCopy=
+    mdb.models['UMAT'].parts['LAMINA'])
+mdb.models['UMAT'].parts['LAMINA-failed'].Unlock(reportWarnings=False)
+del mdb.models['UMAT'].parts['LAMINA']
+mdb.models['UMAT'].parts.changeKey(fromName='LAMINA-failed', toName='LAMINA')
+mdb.models['UMAT'].rootAssembly.regenerate()
+# Save by asasc on 2025_04_14-21.16.38; build 2022 2021_09_15-19.57.30 176069
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['UMAT'].steps['Step-1'].setValues(initialInc=0.1, maxInc=0.1)
+mdb.jobs['UMAT'].submit(consistencyChecking=OFF)
+mdb.jobs['UMAT']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Bling', 'handle': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\asasc\\NextcloudAlterOrdner\\Tutorial\\Introduction to UMAT and VUMAT Subroutines-Part1\\ABAQUS\\WORKSHOP-2\\UMAT.odb', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Bling', 'handle': 10944, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'UMAT', 'memory': 33.0})
+mdb.jobs['UMAT']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 15743.0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(MINIMUM_MEMORY, {'minimum_memory': 20.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.1, 'attempts': 1, 
+    'timeIncrement': 0.1, 'increment': 1, 'stepTime': 0.1, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 2, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.2, 'attempts': 1, 
+    'timeIncrement': 0.1, 'increment': 2, 'stepTime': 0.2, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 3, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.3, 'attempts': 1, 
+    'timeIncrement': 0.1, 'increment': 3, 'stepTime': 0.3, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 4, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.4, 'attempts': 1, 
+    'timeIncrement': 0.1, 'increment': 4, 'stepTime': 0.4, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 5, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.5, 'attempts': 1, 
+    'timeIncrement': 0.1, 'increment': 5, 'stepTime': 0.5, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 6, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.6, 'attempts': 1, 
+    'timeIncrement': 0.1, 'increment': 6, 'stepTime': 0.6, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 7, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.7, 'attempts': 1, 
+    'timeIncrement': 0.1, 'increment': 7, 'stepTime': 0.7, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 8, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.8, 'attempts': 1, 
+    'timeIncrement': 0.1, 'increment': 8, 'stepTime': 0.8, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 9, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.9, 'attempts': 1, 
+    'timeIncrement': 0.1, 'increment': 9, 'stepTime': 0.9, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 10, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 0.1, 'increment': 10, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(JOB_COMPLETED, {'time': 'Mon Apr 14 21:18:49 2025', 
+    'jobName': 'UMAT'})
+mdb.models['UMAT'].steps['Step-1'].setValues(initialInc=0.01, maxInc=0.05, 
+    minInc=1e-12)
+mdb.jobs['UMAT'].submit(consistencyChecking=OFF)
+mdb.jobs['UMAT']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Bling', 'handle': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\asasc\\NextcloudAlterOrdner\\Tutorial\\Introduction to UMAT and VUMAT Subroutines-Part1\\ABAQUS\\WORKSHOP-2\\UMAT.odb', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Bling', 'handle': 1796, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'UMAT', 'memory': 33.0})
+mdb.jobs['UMAT']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 15743.0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(MINIMUM_MEMORY, {'minimum_memory': 20.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.01, 'attempts': 1, 
+    'timeIncrement': 0.01, 'increment': 1, 'stepTime': 0.01, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 2, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.02, 'attempts': 1, 
+    'timeIncrement': 0.01, 'increment': 2, 'stepTime': 0.02, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 3, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.035, 'attempts': 1, 
+    'timeIncrement': 0.015, 'increment': 3, 'stepTime': 0.035, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 4, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0575, 'attempts': 1, 
+    'timeIncrement': 0.0225, 'increment': 4, 'stepTime': 0.0575, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 5, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.09125, 'attempts': 1, 
+    'timeIncrement': 0.03375, 'increment': 5, 'stepTime': 0.09125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 6, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.14125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 6, 'stepTime': 0.14125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 7, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.19125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 7, 'stepTime': 0.19125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 8, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.24125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 8, 'stepTime': 0.24125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 9, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.29125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 9, 'stepTime': 0.29125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 10, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.34125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 10, 'stepTime': 0.34125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 11, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.39125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 11, 'stepTime': 0.39125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 12, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.44125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 12, 'stepTime': 0.44125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 13, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.49125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 13, 'stepTime': 0.49125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 14, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.54125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 14, 'stepTime': 0.54125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 15, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.59125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 15, 'stepTime': 0.59125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 16, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.64125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 16, 'stepTime': 0.64125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 17, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.69125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 17, 'stepTime': 0.69125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 18, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.74125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 18, 'stepTime': 0.74125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 19, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.79125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 19, 'stepTime': 0.79125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 20, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.84125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 20, 'stepTime': 0.84125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 21, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.89125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 21, 'stepTime': 0.89125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 22, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.94125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 22, 'stepTime': 0.94125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 23, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.99125, 'attempts': 1, 
+    'timeIncrement': 0.05, 'increment': 23, 'stepTime': 0.99125, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 24, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 0.0087499999999997, 'increment': 24, 'stepTime': 1.0, 
+    'step': 1, 'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['UMAT']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(JOB_COMPLETED, {'time': 'Mon Apr 14 21:20:10 2025', 
+    'jobName': 'UMAT'})
+# Save by asasc on 2025_04_14-21.24.37; build 2022 2021_09_15-19.57.30 176069

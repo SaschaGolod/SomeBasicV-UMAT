@@ -1,0 +1,19 @@
+<?xml version="1.0"?><msgwrapper><Started><phase type="symconst">BATCHPRE_PHASE</phase><jobName type="string">ABAQUS</jobName><clientHost type="string">Bling</clientHost><handle type="integer">0</handle></Started>
+<Warning><message type="string">COMPRESSIVE FAILURE VALUES MUST BE NEGATIVE. NEGATIVE OF INPUT TAKEN.</message><phase type="symconst">BATCHPRE_PHASE</phase><jobName type="string">ABAQUS</jobName></Warning>
+<Warning><message type="string">NO BIAXIAL STRESS LIMIT GIVEN.  DEFAULT F12 USED.</message><phase type="symconst">BATCHPRE_PHASE</phase><jobName type="string">ABAQUS</jobName></Warning>
+<Warning><message type="string">OUTPUT VARIABLE SDV HAS NO COMPONENTS IN THIS ANALYSIS FOR ELEMENT TYPE S4</message><phase type="symconst">BATCHPRE_PHASE</phase><jobName type="string">ABAQUS</jobName></Warning>
+<Warning><message type="string">STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.</message><phase type="symconst">BATCHPRE_PHASE</phase><jobName type="string">ABAQUS</jobName></Warning>
+<Warning><message type="string">OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP</message><phase type="symconst">BATCHPRE_PHASE</phase><jobName type="string">ABAQUS</jobName></Warning>
+<Odb_File><file type="string">C:\Users\asasc\NextcloudAlterOrdner\Tutorial\Introduction to UMAT and VUMAT Subroutines-Part1\ABAQUS\WORKSHOP-2\ABAQUS.odb</file><phase type="symconst">BATCHPRE_PHASE</phase><jobName type="string">ABAQUS</jobName></Odb_File>
+<Completed><message type="string">Analysis phase complete</message><phase type="symconst">BATCHPRE_PHASE</phase><jobName type="string">ABAQUS</jobName></Completed>
+<Started><phase type="symconst">STANDARD_PHASE</phase><jobName type="string">ABAQUS</jobName><clientHost type="string">Bling</clientHost><handle type="integer">7152</handle></Started>
+<Step><stepId type="integer">1</stepId><phase type="symconst">STANDARD_PHASE</phase><jobName type="string">ABAQUS</jobName></Step>
+<Odb_Frame><step type="integer">0</step><frame type="integer">0</frame><phase type="symconst">STANDARD_PHASE</phase><jobName type="string">ABAQUS</jobName></Odb_Frame>
+<MEMORY_ESTIMATE><memory type="float">33</memory><phase type="symconst">STANDARD_PHASE</phase><jobName type="string">ABAQUS</jobName></MEMORY_ESTIMATE>
+<PHYSICAL_MEMORY><physical_memory type="float">15743</physical_memory><phase type="symconst">STANDARD_PHASE</phase><jobName type="string">ABAQUS</jobName></PHYSICAL_MEMORY>
+<MINIMUM_MEMORY><minimum_memory type="float">20</minimum_memory><phase type="symconst">STANDARD_PHASE</phase><jobName type="string">ABAQUS</jobName></MINIMUM_MEMORY>
+<Odb_Frame><step type="integer">0</step><frame type="integer">1</frame><phase type="symconst">STANDARD_PHASE</phase><jobName type="string">ABAQUS</jobName></Odb_Frame>
+<Status><step type="integer">1</step><increment type="integer">1</increment><attempts type="integer">1</attempts><severe type="integer">0</severe><equilibrium type="integer">1</equilibrium><iterations type="integer">1</iterations><totalTime type="float">1</totalTime><stepTime type="float">1</stepTime><timeIncrement type="float">1</timeIncrement><phase type="symconst">STANDARD_PHASE</phase><jobName type="string">ABAQUS</jobName></Status>
+<End_Step><stepId type="integer">1</stepId><phase type="symconst">STANDARD_PHASE</phase><jobName type="string">ABAQUS</jobName></End_Step>
+<Completed><message type="string">Analysis phase complete</message><phase type="symconst">STANDARD_PHASE</phase><jobName type="string">ABAQUS</jobName></Completed>
+<JOB_COMPLETED><jobName type="string">ABAQUS</jobName><time type="string">Mon Apr 14 21:15:05 2025</time></JOB_COMPLETED></msgwrapper>

@@ -1,0 +1,244 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(50.0, 26.25))
+mdb.models['Model-1'].sketches['__profile__'].FixedConstraint(entity=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    -8.20894622802734, 11.9851112365723), value=50.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    12.0311050415039, -5.21091842651367), value=50.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0])
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='LAMINA', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['LAMINA'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].Material(name='COMPOSITE')
+mdb.models['Model-1'].materials['COMPOSITE'].UserMaterial(mechanicalConstants=(
+    181000.0, 10300.0, 0.28, 7170.0, 2507.0, 1200.0, 86.0, 184.0, 146.0))
+mdb.models['Model-1'].materials['COMPOSITE'].Depvar(n=1)
+mdb.models['Model-1'].parts['LAMINA'].DatumCsysByThreePoints(coordSysType=
+    CARTESIAN, name='Datum csys-1', origin=(0.0, 0.0, 0.0), point1=(1.0, 0.0, 
+    0.0), point2=(0.0, 1.0, 0.0))
+mdb.models['Model-1'].parts['LAMINA'].CompositeLayup(description='', 
+    elementType=SHELL, name='CompositeLayup-1', offsetType=MIDDLE_SURFACE, 
+    symmetric=False, thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['LAMINA'].compositeLayups['CompositeLayup-1'].Section(
+    integrationRule=SIMPSON, poissonDefinition=DEFAULT, preIntegrate=OFF, 
+    temperature=GRADIENT, thicknessType=UNIFORM, useDensity=OFF)
+mdb.models['Model-1'].parts['LAMINA'].compositeLayups['CompositeLayup-1'].ReferenceOrientation(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, fieldName='', localCsys=
+    mdb.models['Model-1'].parts['LAMINA'].datums[2], orientationType=SYSTEM)
+mdb.models['Model-1'].parts['LAMINA'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='COMPOSITE', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=30.0, plyName='Ply-1', region=Region(
+    faces=mdb.models['Model-1'].parts['LAMINA'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )), suppressed=False, thickness=0.1, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['LAMINA'].compositeLayups['CompositeLayup-1'].section.TransverseShearShell(
+    k11=5100.0, k12=0.0, k22=5100.0)
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='LAMINA-1', 
+    part=mdb.models['Model-1'].parts['LAMINA'])
+mdb.models['Model-1'].StaticStep(name='Step-1', previous='Initial')
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(variables=(
+    'S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 'CSTRESS', 'CDISP', 
+    'SDV'))
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['LAMINA-1'].edges.getSequenceFromMask(
+    ('[#8 ]', ), ), name='Set-1')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-1', region=mdb.models['Model-1'].rootAssembly.sets['Set-1'], u1=0.0, 
+    u2=0.0, u3=0.0, ur1=0.0, ur2=0.0, ur3=0.0)
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['LAMINA-1'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ), name='Set-2')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-2', region=mdb.models['Model-1'].rootAssembly.sets['Set-2'], u1=5.0, 
+    u2=UNSET, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['Model-1'].parts['LAMINA'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=2.0)
+mdb.models['Model-1'].parts['LAMINA'].setElementType(elemTypes=(ElemType(
+    elemCode=S4, elemLibrary=STANDARD, secondOrderAccuracy=OFF), ElemType(
+    elemCode=S3, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['LAMINA'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ), ))
+mdb.models['Model-1'].parts['LAMINA'].generateMesh()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='UMAT', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine=
+    'C:\\Users\\CAE Assistant\\Desktop\\UMAT\\Workshop2\\PLANESTRESS-ORTHOTROPIC.for'
+    , waitHours=0, waitMinutes=0)
+mdb.jobs['UMAT'].submit(consistencyChecking=OFF)
+mdb.jobs['UMAT']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\CAE Assistant\\Desktop\\UMAT\\Workshop2\\UMAT.odb', 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 11368, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 0.0, 'attempts': 0, 
+    'timeIncrement': 1.0, 'increment': 0, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 0, 'phase': STANDARD_PHASE, 
+    'equilibrium': 0})
+mdb.jobs['UMAT']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'UMAT', 'memory': 33.0})
+mdb.jobs['UMAT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'UMAT', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['UMAT']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'UMAT'})
+mdb.jobs['UMAT']._Message(JOB_COMPLETED, {'time': 'Mon Jun 08 16:14:07 2020', 
+    'jobName': 'UMAT'})
+mdb.models.changeKey(fromName='Model-1', toName='UMAT')
+mdb.Model(name='ABAQUS', objectToCopy=mdb.models['UMAT'])
+del mdb.models['ABAQUS'].materials['COMPOSITE'].depvar
+del mdb.models['ABAQUS'].materials['COMPOSITE'].userMaterial
+mdb.models['ABAQUS'].materials['COMPOSITE'].Elastic(table=((181000.0, 10300.0, 
+    0.28, 7170.0, 7170.0, 3812.0), ), type=LAMINA)
+mdb.models['ABAQUS'].materials['COMPOSITE'].elastic.FailStress(table=((2507.0, 
+    1200.0, 86.0, 184.0, 146.0, 0.0, 0.0), ))
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='ABAQUS', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='ABAQUS', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['ABAQUS'].submit(consistencyChecking=OFF)
+mdb.jobs['ABAQUS']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 0, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'COMPRESSIVE FAILURE VALUES MUST BE NEGATIVE. NEGATIVE OF INPUT TAKEN.', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'NO BIAXIAL STRESS LIMIT GIVEN.  DEFAULT F12 USED.', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT VARIABLE SDV HAS NO COMPONENTS IN THIS ANALYSIS FOR ELEMENT TYPE S4', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\CAE Assistant\\Desktop\\UMAT\\Workshop2\\ABAQUS.odb', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 11252, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(STATUS, {'totalTime': 0.0, 'attempts': 0, 
+    'timeIncrement': 1.0, 'increment': 0, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'ABAQUS', 'severe': 0, 'iterations': 0, 'phase': STANDARD_PHASE, 
+    'equilibrium': 0})
+mdb.jobs['ABAQUS']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'ABAQUS', 'memory': 31.0})
+mdb.jobs['ABAQUS']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'ABAQUS', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['ABAQUS']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(JOB_COMPLETED, {'time': 'Mon Jun 08 16:18:46 2020', 
+    'jobName': 'ABAQUS'})
+mdb.models['ABAQUS'].fieldOutputRequests['F-Output-1'].setValues(variables=(
+    'S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 'CSTRESS', 'CDISP', 
+    'CFAILURE', 'SDV'))
+del mdb.jobs['ABAQUS']
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='ABAQUS', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='ABAQUS', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['ABAQUS'].submit(consistencyChecking=OFF)
+mdb.jobs['ABAQUS']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 0, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'COMPRESSIVE FAILURE VALUES MUST BE NEGATIVE. NEGATIVE OF INPUT TAKEN.', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'NO BIAXIAL STRESS LIMIT GIVEN.  DEFAULT F12 USED.', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT VARIABLE SDV HAS NO COMPONENTS IN THIS ANALYSIS FOR ELEMENT TYPE S4', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\CAE Assistant\\Desktop\\UMAT\\Workshop2\\ABAQUS.odb', 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'MRW-DESIGN', 'handle': 11832, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(STATUS, {'totalTime': 0.0, 'attempts': 0, 
+    'timeIncrement': 1.0, 'increment': 0, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'ABAQUS', 'severe': 0, 'iterations': 0, 'phase': STANDARD_PHASE, 
+    'equilibrium': 0})
+mdb.jobs['ABAQUS']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'ABAQUS', 'memory': 31.0})
+mdb.jobs['ABAQUS']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'ABAQUS', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['ABAQUS']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'ABAQUS'})
+mdb.jobs['ABAQUS']._Message(JOB_COMPLETED, {'time': 'Mon Jun 08 16:21:11 2020', 
+    'jobName': 'ABAQUS'})
+# Save by CAE Assistant on 2020_06_08-16.54.01; build 6.14-1 2014_06_05-02.41.02 134264

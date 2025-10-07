@@ -1,0 +1,95 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2022 replay file
+# Internal Version: 2021_09_15-19.57.30 176069
+# Run by asasc on Mon Jan 20 17:40:50 2025
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+#: Executing "onCaeGraphicsStartup()" in the home directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=87.0671920776367, 
+    height=57.1861114501953)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+#: Executing "onCaeStartup()" in the home directory ...
+openMdb('Workshop1.cae')
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+#* MdbError: incompatible release number, expected 2022, got 6.14-1
+upgradeMdb(
+    "C:/Users/asasc/Nextcloud2/Tutorial/Introduction to UMAT and VUMAT Subroutines-Part1/ABAQUS/WORKSHOP-3/Workshop1-6.14-1.cae", 
+    "C:/Users/asasc/Nextcloud2/Tutorial/Introduction to UMAT and VUMAT Subroutines-Part1/ABAQUS/WORKSHOP-3/Workshop1.cae", 
+    )
+#: The model database "C:\Users\asasc\Nextcloud2\Tutorial\Introduction to UMAT and VUMAT Subroutines-Part1\ABAQUS\WORKSHOP-3\Workshop1_TEMP.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+#: The model database has been saved to "C:\Users\asasc\Nextcloud2\Tutorial\Introduction to UMAT and VUMAT Subroutines-Part1\ABAQUS\WORKSHOP-3\Workshop1.cae".
+#: The model database "C:\Users\asasc\Nextcloud2\Tutorial\Introduction to UMAT and VUMAT Subroutines-Part1\ABAQUS\WORKSHOP-3\Workshop1-6.14-1.cae" has been converted.
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+p = mdb.models['UMAT'].parts['Part-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+a = mdb.models['UMAT'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+o3 = session.openOdb(
+    name='C:/Users/asasc/Nextcloud2/Tutorial/Introduction to UMAT and VUMAT Subroutines-Part1/ABAQUS/WORKSHOP-3/UMAT.odb')
+#* OdbError: The database is from a previous release of Abaqus. 
+#* Run abaqus -upgrade -job <newFileName> -odb <oldOdbFileName> to upgrade it.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+from  abaqus import session
+session.upgradeOdb(
+    "C:/Users/asasc/Nextcloud2/Tutorial/Introduction to UMAT and VUMAT Subroutines-Part1/ABAQUS/WORKSHOP-3/UMAT.odb", 
+    "C:/Users/asasc/AppData/Local/Temp/UMAT1737391310.967.odb", )
+from  abaqus import session
+o7 = session.openOdb(
+    'C:/Users/asasc/AppData/Local/Temp/UMAT1737391310.967.odb')
+#: Model: C:/Users/asasc/AppData/Local/Temp/UMAT1737391310.967.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       3
+#: Number of Node Sets:          3
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o7)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=151.188, 
+    farPlane=238.627, width=143.534, height=56.4433, cameraPosition=(113.956, 
+    36.232, 184.742), cameraUpVector=(-0.336254, 0.887139, -0.316099), 
+    cameraTarget=(43.254, 18.2642, 3.53535))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=152.841, 
+    farPlane=234.847, width=145.103, height=57.0603, cameraPosition=(75.8337, 
+    87.9223, 183.075), cameraUpVector=(-0.0718911, 0.760585, -0.645245), 
+    cameraTarget=(43.3385, 18.1497, 3.53904))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=148.264, 
+    farPlane=238.465, width=140.758, height=55.3516, cameraPosition=(70.0298, 
+    145.328, 149.265), cameraUpVector=(-0.045949, 0.490983, -0.869957), 
+    cameraTarget=(43.3833, 17.707, 3.79979))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=153.518, 
+    farPlane=232.208, width=145.746, height=57.3129, cameraPosition=(36.1834, 
+    130.988, 162.725), cameraUpVector=(-0.0363222, 0.573084, -0.818691), 
+    cameraTarget=(43.7289, 17.8534, 3.66236))
+session.viewports['Viewport: 1'].animationController.setValues(
+    animationType=TIME_HISTORY)
+session.viewports['Viewport: 1'].animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].animationController.stop()
+session.viewports['Viewport: 1'].animationController.showFirstFrame()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+session.viewports['Viewport: 1'].animationController.decrementFrame()
+session.viewports['Viewport: 1'].animationController.incrementFrame()
+a = mdb.models['UMAT'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+mdb.save()
+#: The model database has been saved to "C:\Users\asasc\Nextcloud2\Tutorial\Introduction to UMAT and VUMAT Subroutines-Part1\ABAQUS\WORKSHOP-3\Workshop1.cae".

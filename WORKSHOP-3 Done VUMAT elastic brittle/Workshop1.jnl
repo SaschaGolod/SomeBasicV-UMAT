@@ -1,0 +1,9 @@
+# Save by asasc on 2025_01_20-17.41.12; build 2022 2021_09_15-19.57.30 176069
+from abaqus import *
+upgradeMdb(
+    'C:/Users/asasc/Nextcloud2/Tutorial/Introduction to UMAT and VUMAT Subroutines-Part1/ABAQUS/WORKSHOP-3/Workshop1-6.14-1.cae'
+    , 
+    'C:/Users/asasc/Nextcloud2/Tutorial/Introduction to UMAT and VUMAT Subroutines-Part1/ABAQUS/WORKSHOP-3/Workshop1.cae')
+# Save by asasc on 2025_01_20-17.41.12; build 2022 2021_09_15-19.57.30 176069
+# Save by asasc on 2025_01_20-17.42.32; build 2022 2021_09_15-19.57.30 176069
+# Save by asasc on 2025_09_30-10.03.53; build 2022 2021_09_15-19.57.30 176069
